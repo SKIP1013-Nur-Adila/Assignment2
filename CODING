@@ -1,0 +1,588 @@
+
+/*
+ * Assignment 2
+ */
+package assignment2;
+import java.util.Scanner;
+public class E_Commerce_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input=new Scanner(System.in);
+		
+		int fruitprice,kilogram = 0,gram,voucher, gramneeded, peratusdiskaun1, choice, item, kilogram1, kilogram2, kilogram3;
+		String orderbuah,buah,location = null,suhubilik,petiais,sejukbeku,buah1;
+		double totalorder = 0,percentage,totalorder1 = 0,total = 0,peratusdiskaun;
+		char Y, GetVoucher, checkFruitResistance, deliveryProceed, claimVoucher;
+		
+		
+	//initialize	
+		int k_buah_bilik = 5, k_buah_sejuk = 25, k_buah_peti = 15, tanggal=0, bulan=0, tahun=0, tarikh = 0,jaraklokasi=0,cajpenghantaran=0;
+		
+		
+		
+	//Tarikh hari user input
+		System.out.println("Please enter the date of month below");
+		System.out.print("Date\t: ");
+		tanggal=input.nextInt();
+		System.out.print("Month\t: ");
+		bulan=input.nextInt();
+		System.out.print("Year\t: ");
+		tahun=input.nextInt();
+		
+		//tarikh2= tanggal1+bulan1+tahun1;
+		String tarikh2=Integer.toString(tarikh),tanggal1=Integer.toString(tanggal),bulan1=Integer.toString(bulan),tahun1=String.valueOf(tahun);
+		
+		tarikh2=tanggal1 + "." + bulan1+"." + tahun1;
+		
+		System.out.println("Date today: " + tarikh2);
+	//Stop Tarikh hari user input
+		
+		
+	//check harga buah
+		
+		System.out.println("This system will check the price of fruit by entering the name of the fruit\n");
+
+		System.out.print("Enter N to stop checking the price of fruit\t: ");
+		choice =input.next().charAt(0);
+		System.out.println("");
+		
+		while (choice != 'N') {
+		
+		System.out.printf("Please enter the fruit name\t: ");
+		buah=input.next();
+		
+		
+		if (buah.equals ("Anggur")) {
+			fruitprice = 8;
+			System.out.printf("Fruit price per kilogram\t: " + "RM" + fruitprice + "\n");
+			System.out.print("Fruit code is\t\t\t: 111111\n");
+			
+			}else if (buah.equals ("Apple")) {
+				fruitprice=10;
+				System.out.printf("Fruit price per kilogram\t: " + "RM" + fruitprice + "\n");
+				System.out.print("Fruit code is\t\t\t: 000000\n");	
+				
+			}else {
+				fruitprice=15;
+				System.out.printf("Fruit price per kilogram\t: " + "RM" + fruitprice + "\n");
+				System.out.print("Fruit code is\t\t\t: xxxxxx\n");
+				
+			}
+		System.out.print("\nEnter N to stop checking the price of fruit\t: ");
+		choice =input.next().charAt(0);
+		
+		System.out.println("");
+		}//looping 
+		
+		System.out.println("Ready to take order");
+		
+	// Stop check harga buah 
+		
+		
+	//user proceed order
+		System.out.print("\nProceed if you want to order(Y/N)\t: ");
+		Y=input.next().charAt(0);
+		System.out.println();
+	//OTW Order	
+		switch (Y) {
+		
+		case 'Y':
+		
+		
+	//system taking order
+		System.out.print("Enter the number of item(s) purchased (Only below 3): ");
+		item = input.nextInt();
+		
+		
+		fruitprice = 0 ;
+		//double totalorder1 ;
+		
+		switch (item) { 
+			case 1:
+				System.out.print("What do you want to order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram you need (KG)\t\t: ");
+				kilogram1=input.nextInt();
+				
+				//Detect the price and kilogram
+				totalorder = (fruitprice * kilogram1);
+				System.out.println("\nTotal fruit price : " + "RM" + totalorder);
+				break;
+				
+			case 2:
+				System.out.print("What is your first order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram for your first item (KG)\t: ");
+				kilogram1=input.nextInt();
+				System.out.print("\n");
+				
+				totalorder = fruitprice * kilogram1;
+				
+				System.out.print("What is your second order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram for your second item (KG): ");
+				kilogram2=input.nextInt();
+				
+				//Detect the price and kilogram
+				totalorder = ( totalorder + (fruitprice*kilogram2));
+				System.out.println("\nTotal fruit price : " + "RM" + totalorder);
+				break;
+				
+			case 3:
+				System.out.print("What is your first order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram for your first item (KG): ");
+				kilogram1=input.nextInt();
+				System.out.print("\n");
+				totalorder = fruitprice * kilogram1;
+				
+				System.out.print("What is your second order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram for your second item (KG): ");
+				kilogram2=input.nextInt();
+				System.out.print("\n");
+				
+				totalorder = (totalorder + (fruitprice * kilogram2));
+				
+				System.out.print("What is your third order\t\t: ");
+				orderbuah=input.next();
+				
+				if (orderbuah.equals ("Anggur")) {
+					fruitprice = 8;
+					System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+					//System.out.print("\n");
+					
+					}else if (orderbuah.equals ("Apple")) {
+						fruitprice=10;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");	
+						
+					}else {
+						fruitprice=15;
+						System.out.printf("Fruit price per kilogram\t\t: " + "RM" + fruitprice + "\n");
+						//System.out.print("\n");
+					}
+				
+				System.out.print("Total Kilogram for your third item (KG)\t: ");
+				kilogram3=input.nextInt();
+				
+				//Detect the price and kilogram
+				totalorder = (totalorder + (fruitprice * kilogram3));
+				System.out.println("\nTotal fruit price : " + "RM" + totalorder);
+				break;
+			
+		}
+		
+	//Stop system taking order
+		
+		
+		
+	//discount from the spoiled fruit voucher
+		
+		peratusdiskaun1 = 0;
+		
+		System.out.print("Do you want to claim your voucher(Y/N): ");
+		claimVoucher = input.next().charAt(0);
+		
+		switch (claimVoucher) {
+		
+		case 'Y':
+		
+		
+		System.out.print("\nEnter your voucher code here: ");
+		peratusdiskaun1=input.nextInt();
+		
+	//Code discount	
+		switch (peratusdiskaun1) {
+		
+		case 1111:
+			System.out.println("You've claimed your 5 percent voucher");
+			
+			percentage= 0.95; // detect dri kod diskaun
+			totalorder1 = (percentage * totalorder);
+			System.out.printf("Your Total fruit price is: RM%.2f" , totalorder1);
+			System.out.println("");
+			break;
+			
+		case 1101:
+			System.out.println("You've claimed your 8 percent voucher");
+			
+			percentage= 0.92; // detect dri kod diskaun
+			totalorder1 = (percentage * totalorder);
+			System.out.printf("Your Total fruit price is: RM%.2f" , totalorder1);
+			System.out.println("");
+			break;
+			
+		
+			} 
+	//Stop code discount
+		break;
+		}
+	//Stop discount from the spoiled fruit voucher
+		
+	//Proceed Delivery
+		System.out.print("\nPlease enter Y to proceed with the delivery: ");
+		deliveryProceed = input.next().charAt(0);
+		
+		switch (deliveryProceed) {
+		case 'Y' :
+			
+		System.out.print("Enter the delivery location\t: ");
+		location=input.nextLine();
+		location=input.nextLine();
+		//Jarak perjalanan dan delivery fee
+		
+	//Proceed location
+		if (location.equals ("Kg Bubul")) {
+			jaraklokasi=8;
+			cajpenghantaran=8;
+			System.out.println("Location distance\t\t: " + jaraklokasi + "KM");
+			System.out.println("Delivery fee to " + location  + "\t: RM" + cajpenghantaran);
+			
+			total= totalorder1+cajpenghantaran;
+			
+			}else if (location.equals ("Sepagaya")) {
+				jaraklokasi=5;
+				cajpenghantaran=5;
+				System.out.println("Location distance\t\t: " + jaraklokasi + "KM");
+				System.out.println("Delivery fee to " + location  + "\t: RM" + cajpenghantaran);
+				
+				total= totalorder1+cajpenghantaran;
+				
+			}else {
+				
+				System.out.println("Sorry your address is not in our delivery range");
+				
+				total= totalorder1+cajpenghantaran;
+			}
+	//Stop proceed location
+		break;
+		
+		}
+	//Stop proceed Delivery	
+	
+		
+	//system check the total cost	
+		System.out.printf("\n:- Total payment cost will be RM%.2f" , total);
+		System.out.println("\n\t\t\tThank you for purchasing with us.\n");
+		
+		break;
+	//Stop OTW Order
+		
+		case 'N':
+			System.out.println("\n\t\tWe're sorry to see you go. Thank You\n");
+		}//to not proceed order
+		
+	//Stop user proceed order
+		
+		
+	//Fruit Resistance
+		System.out.print("Do you want to check the resistance of the fruits received(Y/N)?: ");
+		checkFruitResistance = input.next().charAt(0);
+		
+		switch (checkFruitResistance) {
+		case 'Y':
+			
+		
+	//System check the fruit details
+		System.out.println("System to check the resistance of the fruits received\n");
+		
+		
+		System.out.print("Enter the fruit name or code: ");
+		buah1=input.next(); 
+		
+		//System.out.print("Enter the fruit code: ");
+		//code=input.nextInt();//(6 number) Code buah terletak pada setiap buah merujuk kepada tarikh iya dipetik/ketahann dlm pelbagai keadaan 
+		
+		switch (buah1) {
+		
+		case "00000011":
+		case "Apple":
+			
+			//Check details
+			
+			
+			//suhu bilik	
+			System.out.println("\n");
+			System.out.print("Enter the fruit storage method(RTP/Refrigerator/Freezer): ");
+			
+			suhubilik=input.next();
+			
+			switch (suhubilik) {
+			
+			case "RTP":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				break;
+				
+			case "Refrigerator":
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021"); 
+				break;
+				
+			case "Freezer":
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "RTP/Refrigerator":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021"); 
+				break;
+				
+			case "RTP/Freezer":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "Refrigerator/Freezer":
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021");
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "RTP/Refrigerator/Freezer":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021");
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			}
+			break; 
+			
+		case "Anggur":
+		case "11111100":
+			
+			//Check details
+			
+			
+			//suhu bilik	
+			System.out.println("\n");
+			System.out.print("Enter the fruit storage method(RTP/Refrigerator/Freezer): ");
+			
+			suhubilik = input.next();
+			
+			switch (suhubilik) {
+			
+			case "RTP":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				break;
+				
+			case "Refrigerator":
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021"); 
+				break;
+				
+			case "Freezer":
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "RTP/Refrigerator":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021"); 
+				break;
+				
+			case "RTP/Freezer":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "Refrigerator/Freezer":
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021");
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			case "RTP/Refrigerator/Freezer":
+				System.out.println("Fruit resistance at room temperature (day): " + k_buah_bilik );
+				System.out.println("Fruit durability to date: " + "10.12.2021");
+				// ketahanan buah dalam peti ais dan tarikh sehingga ianya tahan
+				
+				System.out.println("Fruit resistance in Refrigerator (day): " + k_buah_peti);
+				System.out.println("Fruit durability to date: "+ "20.12.2021");
+				
+				System.out.println("Fruit resistance at Freezer (day): " + k_buah_sejuk);
+				System.out.println("Fruit durability to date: "+"30.12.2021");
+				break;
+				
+			}
+			break;
+			//no more case anggur apple
+		case "xxxxxx":
+			System.out.println("Please reach our staff");
+			break;
+		}
+	//Stop System check the fruit details
+		
+	
+		
+		
+		System.out.println("\n");
+		
+		break;
+		
+		}
+	//Stop system check fruit resistance
+		
+	//claim coupon discount	
+		System.out.print("Enter Y to claim your voucher here: ");
+		GetVoucher = input.next().charAt(0);
+		
+		switch (GetVoucher) {
+		
+		case 'Y':
+			 
+			
+			System.out.println("Send your spoiled fruits to our marchandise and get up to 5 percent off from SDN for every purchase you made with us.");
+			
+			System.out.print("Please enter the total weight of your spoiled fruit: ");
+			gram=input.nextInt();
+			System.out.println("");
+			
+			
+			if  (gram <= 499) {
+				System.out.println("\n\n\nYou are not valid to claim voucher yet");
+				gramneeded = 500 - gram;
+				System.out.println("You need another " + gramneeded + "gram");
+			} else if (gram>=500 && gram <=999 ) {
+				System.out.println("You just got a 5% voucher code");
+				System.out.println("Use the code below for your next purchase with us");
+				System.out.println("1101");
+			}else {
+				System.out.println("You just got a 8% voucher code");
+				System.out.println("Use the code below for your next purchase with us");
+				System.out.println("1111");
+			
+		}
+				
+			System.out.println("\n\n\nThank you for your contribution");
+			break;
+			
+		case 'N':
+			System.out.println ("\n\n\nThank You for using our service");
+		
+		}
+	//Stop claim coupon discount	
+	
+	System.out.println("Have a nice day");	
+		input.close();
+	}
+
+}
