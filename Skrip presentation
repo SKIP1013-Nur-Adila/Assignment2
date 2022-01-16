@@ -1,0 +1,35 @@
+CODING
+
+
+alright for coding 
+
+first part is for user to enter the date 
+where ill give integer value for user to input and i convert it to string to print the value
+
+second part for user to check the fruit price
+i use while for user to proceed order 
+and if user enter y the i use if else to 
+check user input is equal to what type of fruit
+or if user enter 'n' ill just print a line to display
+
+third part is to order
+where swtch to proceed 
+and another switch to check the items and if else to 
+check user input equal to wht type of fruit
+
+fourth 
+like usual switch to proceed
+and i use another switch for voucher code
+
+fifth part to use delivery service 
+i use switch and if else
+
+then checking total cost
+
+seventh is to check the resistance 
+where i use switch
+
+eight to claim discount i use both switch and if else
+
+last part is to wish the customer i just use print line and system end
+
